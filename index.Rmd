@@ -1,0 +1,30 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+<br>
+
+## This is Xiao's awesome website
+<br>
+<img src = "image/hello.gif" style = "width:60%">
+
+<p>Hello, I am Xiao Ma, a MS Biostatistic student at Columbia University. 
+Welcome to my website!<p>
+
+### Resume
+
+
+-Currently looking for interns in a position of Data Analyst/ Statistican.<br>
+-Hoping to implement statistical models and big data techniques into the real-world practice and further improves the convenience of people’s life and efficiency of the business operation by leveraging the big data products.<br>
+-Here is my [Resume](Resume.html) page.
+
+
+
+### Fun fact about me
+<p>I take a picture of the sky every single day. The sun, the clouds, the moon and the setting sun relieve my pressure, with string the sky I could find my inner peace and pure my mind. This makes me keep enthusiasm for life. I will be more encouraged and passion for tomorrow.<p>
+
+
+

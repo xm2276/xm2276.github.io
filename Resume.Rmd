@@ -1,0 +1,56 @@
+---
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+
+## Xiao Ma's Resume
+<br>
+
+### EDUCATION
+
+##### Columbia University,&emsp;&emsp;&emsp;New York&emsp;NY
+Master of Science in Biostatistics &emsp;&emsp;&emsp;&emsp;&emsp;09/2021-Present
+
+##### Rutgers University, &emsp;&emsp;New Brunswick&emsp;NJ                 
+Bachelor of Science in Statistics &emsp; GPA: 3.5 / 4.0 <br>
+•	Honors: Dean’s List <br>
+•	Coursework: Multivariate Calculus, Linear Algebra, Linear Optimization, Applied Multivariate Analysis, Computational Stats, Computing&Graph Stats, Math Theory Probability, Real Analysis, Bayesian Data Analysis, Regression Methods, Math Reasoning
+<br>
+
+### PROFESSIONAL EXPERIENCE
+
+##### Meituan-Dianping  &emsp;&emsp; Beijing, CN
+Intern, Data Analyst &emsp;&emsp;&emsp;&emsp; 06/2020-08/2020 <br>
+•	Drove business insights by developing a sales forecasting model with testing error less than 2% using ARIMA and Prophet model.<br>
+•	Designed a variety of metrics to measure products’ performance by pulling large amount of data from internal database using Hive and automating business dashboard using Excel and VBA.
+•	Visualized products’ performance metrics using Tableau and delivered presentations to leadership.
+
+##### CameraKing Technology &emsp;&emsp; Shenzhen, CN
+Intern, Project Manager  &emsp;&emsp;&emsp;&emsp; 05/2019-07/2019 <br>
+•	Conducted test vs. control analysis and A/B testing to measure the performance of new products and analyzed the results using significant test. <br>
+•	Designed user experience survey and loaded survey data into database system using SQL.
+
+### ACADEMIC PROJECTS
+
+##### Applied Multivariate Data Analysis Project &emsp;&emsp; New Brunswick, NJ                   
+Project Lead   &emsp;&emsp;&emsp;&emsp; 01/2020-05/2020   <br>
+•	Developed a recursive partitioning model to predict a company’s revenue by considering more than 30 independent variables with mean-squared error than 0.2. <br>
+•	Performed data cleaning by interpolating the missing value, transforming the depend variable and removing the outlier. <br>
+•	Conducted Principle Component Analysis to reduce the dimension of independent variables and avoid multi-collinearity. <br>
+•	Visualized data and presented results in front of over 30 people.
+
+
+##### Effects of Sampling on Predictive Analysis &emsp;&emsp; New Brunswick, NJ
+Project Lead  &emsp;&emsp;&emsp;&emsp; 09/2019-12/2019 <br>
+•	Developed a classification model to predict patients’ likelihood to seek treatment using machine learning algorithms including logistic regression, decision tree, random forest, gradient boosting.<br>
+•	Conducted out-of-sample test to measure the accuracy of each model using ROC curve and achieve prediction accuracy of over 90%.<br>
+•	Analyzed the effect of different sampling strategies on the accuracy and variance of predictive analysis including simple random sampling. stratified sampling and clustered sampling.
+
+
+<br><br><br>
+
+Here is back to the [index](index.html) page
