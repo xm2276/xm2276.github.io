@@ -1,0 +1,70 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+instacart %>% 
+  filter(aisle %in% c("fresh fruits"), product_name == "Banana") %>%
+  mutate(text_label = str_c("Order_dow: ", order_dow, "\nOrder_number: ", order_number, "\norder_hour_of_day: ", order_hour_of_day)) %>% 
+  plot_ly(
+    x = ~order_hour_of_day, y = ~order_number, color = ~order_hour_of_day, text = ~text_label, alpha = .5, type = "scatter", mode = "markers", colors = "viridis") %>% 
+  layout(
+  title = "Banana order_hour_of_day and order_number plot"
+  )
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+instacart %>% 
+  count(aisle) %>% 
+  filter(n > 15000) %>% 
+  mutate(
+    aisle = factor(aisle),
+    aisle = fct_reorder(aisle,n)
+  ) %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle,
+          type = "bar", colors = "viridis") %>% 
+    layout(
+      xaxis = list(title = FALSE),
+    title = "Aisles ordered more than 15000 times"
+  )
+```
+
+### Chart C
+
+```{r}
+instacart %>%
+  filter(product_name %in%  c("Organic Whole String Cheese", "Grated Parmesan", "Feta Cheese Crumbles")) %>% 
+  plot_ly(
+    x = ~product_name, y = ~order_number, color = ~product_name,
+    alpha = .5, type = "box"
+    ) %>% 
+  layout(
+    title = "Distribution of top three popular cheese"
+  )
+
+```
+
+

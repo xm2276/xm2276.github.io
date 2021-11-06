@@ -22,7 +22,6 @@ Welcome to my website!<p>
 -Here is my [Resume](Resume.html) page.
 
 
-
 ### Fun fact about me
 <p>I take a picture of the sky every single day. The sun, the clouds, the moon and the setting sun relieve my pressure, with string the sky I could find my inner peace and pure my mind. This makes me keep enthusiasm for life. I will be more encouraged and passion for tomorrow.<p>
 

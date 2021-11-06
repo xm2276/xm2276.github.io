@@ -1,0 +1,100 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("instacart")
+instacart %>% 
+  janitor::clean_names() 
+```
+
+
+# Plots
+
+## scatter plot of the top product in fresh vegetables and fruits order
+```{r, message=FALSE}
+instacart %>% 
+  group_by(aisle) %>% 
+  summarise(n_obs = n()) %>% 
+  filter(n_obs > 10000) %>% 
+  arrange(desc(n_obs))
+
+instacart %>% 
+  filter(aisle %in% c("fresh vegetables", "fresh fruits")) %>% 
+  group_by(aisle,product_name) %>% 
+  summarize(n_obs = n()) %>% 
+  arrange(desc(n_obs)) %>% 
+  filter(n_obs > 1000)
+```
+
+
+```{r message=FALSE}
+instacart %>% 
+  filter(aisle %in% c("fresh fruits"), product_name == "Banana") %>%
+  mutate(text_label = str_c("Order_dow: ", order_dow, "\nOrder_number: ", order_number, "\norder_hour_of_day: ", order_hour_of_day)) %>% 
+  plot_ly(
+    x = ~order_hour_of_day, y = ~order_number, color = ~order_hour_of_day, text = ~text_label, alpha = .5, type = "scatter", mode = "markers", colors = "viridis") %>% 
+  layout(
+  title = "Banana order_hour_of_day and order_number plot"
+  )
+
+```
+
+
+
+## bar plot of popular aisles distribution
+```{r message=FALSE}
+instacart %>% 
+  count(aisle) %>% 
+  filter(n > 15000) %>% 
+  mutate(
+    aisle = factor(aisle),
+    aisle = fct_reorder(aisle,n)
+  ) %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle,
+          type = "bar", colors = "viridis") %>% 
+    layout(
+      xaxis = list(title = FALSE),
+    title = "Aisles ordered more than 15000 times"
+  )
+```
+
+
+
+## boxplot
+
+```{r, message=FALSE}
+# firstly we check what are the popular packaged cheese
+instacart %>%
+  filter(aisle == "packaged cheese") %>% 
+  group_by(product_name) %>% 
+  count(product_name) %>% 
+  arrange(desc(n)) 
+```
+
+
+```{r message=FALSE}
+# From the above, we know that the top three populr packaged cheese
+instacart %>%
+  filter(product_name %in%  c("Organic Whole String Cheese", "Grated Parmesan", "Feta Cheese Crumbles")) %>% 
+  plot_ly(
+    x = ~product_name, y = ~order_number, color = ~product_name,
+    alpha = .5, type = "box"
+    ) %>% 
+  layout(
+    title = "Distribution of top three popular cheese"
+  )
+```
+
+
+
+Here is back to the [index](index.html) page
