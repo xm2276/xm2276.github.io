@@ -14,7 +14,10 @@ library(plotly)
 ```{r}
 data("instacart")
 instacart %>% 
-  janitor::clean_names() 
+  group_by(aisle) %>% 
+  summarise(n_obs = n()) %>% 
+  filter(n_obs > 10000) %>% 
+  arrange(desc(n_obs))
 ```
 
 
@@ -22,11 +25,6 @@ instacart %>%
 
 ## scatter plot of the top product in fresh vegetables and fruits order
 ```{r, message=FALSE}
-instacart %>% 
-  group_by(aisle) %>% 
-  summarise(n_obs = n()) %>% 
-  filter(n_obs > 10000) %>% 
-  arrange(desc(n_obs))
 
 instacart %>% 
   filter(aisle %in% c("fresh vegetables", "fresh fruits")) %>% 
